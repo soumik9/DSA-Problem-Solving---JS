@@ -1,5 +1,5 @@
-// *fibonacci series fn
-function fibonacci(n) {
+// *fibonacci series function
+const fibonacci = (n) => {
     const fibon = [0, 1];
 
     // *solution --------  1
