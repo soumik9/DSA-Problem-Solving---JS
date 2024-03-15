@@ -2,7 +2,10 @@
 const factorial = (n) => {
     let result = 1;
 
-    // ! By starting the loop with i = 2, you skip the unnecessary multiplication by 1, since any number multiplied by 1 remains unchanged.
+    /* 
+    ! By starting the loop with i = 2, you skip the unnecessary multiplication by 1, 
+    ! since any number multiplied by 1 remains unchanged. 
+   */
 
     for (let i = 2; i <= n; i++) {
         result = result * i;

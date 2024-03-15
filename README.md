@@ -54,6 +54,9 @@ Factorial of zero is 1.
 Example, 
 [x] factorial(4) = 4*3*2*1 = 24
 [x] factorial(5) = 5*4*3*2*1 = 120
+
+[x] Big O = O(n)
+[x] Linear time complexity 
 ```
 
 Solution:
@@ -77,6 +80,41 @@ const factorial = (n) => {
 Problem defination:
 
 ```bash
+Give a natural number 'n', determine if the number is prime or not?
+
+A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers.
+
+Example, 
+[x] isPrime(5) =  true (1*5 or 5*1)
+[x] isPrime(4) =  false (1*4 or 2*2 or 4*1)
+
+[x] Big O = O(n)
+[x] Linear time complexity 
+```
+
+Solution:
+
+```bash
+const isPrime = (n) => {
+    if (n < 2) {
+        return false;
+    }
+
+    for (let i = 2; i < n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+
+## 4. Power of Two
+
+Problem defination:
+
+```bash
 
 ```
 
@@ -85,7 +123,6 @@ Solution:
 ```bash
 
 ```
-
 ## example
 
 Problem defination:
