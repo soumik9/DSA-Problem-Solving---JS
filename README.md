@@ -159,16 +159,48 @@ const isPowerOfTwo = (n) => {
 ```
 ## 5. Recursion
 
+Recursion is when a function calls it self.
+
+Characterstics, 
+[x] Simplify the problem.
+
+[x] break into smaller versions of the same problem.
+
+[x] need a base case which is a condition to terminate the recursion. Otherwise, result will be
+infinity which will crash the program.
+
+[x] Simplify the problem but not always perfomance is faster solution.
+
 Problem defination:
 
 ```bash
+Give a number 'n', find the n^th element of the fibonacci sequence.
 
+fibonacci(2) = [0, 1]
+
+fibonacci(3) = [0, 1, 1]
+`NB: here third number is sum of first 2 number`
+
+Example, 
+[x] recursiveFibonacci(0) = 0
+[x] recursiveFibonacci(1) = 1
+[x] recursiveFibonacci(6) = 8
+
+[x] O(n) - Iterative
+[x] O (2^n) - recursive which is not a good solution for fibonacci 
 ```
 
 Solution:
 
 ```bash
+const recursiveFibonacci = (n) => {
 
+    if (n < 2) {
+        return n;
+    }
+
+    return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+}
 ```
 ## 5. example
 
