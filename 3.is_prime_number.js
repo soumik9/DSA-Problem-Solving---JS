@@ -1,22 +1,31 @@
 // *is prime of a number function
 const isPrime = (n) => {
+
+    let res = true;
+
     if (n < 2) {
-        return false;
+        res = false;
     }
 
-    for (let i = 2; i < n; i++) {
-        if (n % i == 0) {
-            return false;
+    for (let i = 2; i * i <= n; i++) {
+        if (n % i === 0) {
+            res = false;
+            break;
         }
     }
 
-    return true;
+    if (res) {
+        console.log(n, "is a prime number.");
+    }
+    else {
+        console.log(n, "is not a prime number.");
+    }
 }
 
-console.log(isPrime(6));
-console.log(isPrime(1));
-console.log(isPrime(5));
-console.log(isPrime(13));
+isPrime(2);
+isPrime(1);
+isPrime(5);
+isPrime(13);
 
 /* 
  * Big O = O(n)

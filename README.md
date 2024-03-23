@@ -96,21 +96,68 @@ Solution:
 
 ```bash
 const isPrime = (n) => {
+
+    let res = true;
+
     if (n < 2) {
-        return false;
+        res = false;
     }
 
-    for (let i = 2; i < n; i++) {
-        if (n % i == 0) {
+    for (let i = 2; i * i <= n; i++) {
+        if (n % i === 0) {
+            res = false;
+            break;
+        }
+    }
+
+    if (res) {
+        console.log(n, "is a prime number.");
+    }
+    else {
+        console.log(n, "is not a prime number.");
+    }
+}
+```
+
+## 4. Power of Two
+
+Problem defination:
+
+```bash
+Give a positive number 'n', determine if the number is a power of 2 or not?
+
+An integer is a power of two if there exists an integer 'x' such that n === 2^x.
+
+For a number, if reminder is 0 in every step and 'n' comes down to 1 then the number is power of two.
+
+Example, 
+[x] isPowerOfTwo(1) =  true (2^0)
+[x] isPowerOfTwo(2) =  true (2^1)
+[x] isPowerOfTwo(5) =  false
+
+
+[x]  Big O = O(logn)
+[x]  input size reduced by half 
+```
+
+Solution:
+
+```bash
+const isPowerOfTwo = (n) => {
+
+    if (n < 1) return false;
+
+    while (n > 1) {
+        if (n % 2 !== 0) {
             return false;
         }
+        n = n / 2
     }
 
     return true;
 }
 ```
-
-## 4. Power of Two
+## 5. Recursion
 
 Problem defination:
 
@@ -123,7 +170,7 @@ Solution:
 ```bash
 
 ```
-## example
+## 5. example
 
 Problem defination:
 
