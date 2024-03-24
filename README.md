@@ -157,7 +157,7 @@ const isPowerOfTwo = (n) => {
     return true;
 }
 ```
-## 5. Recursion
+## 5. Recursive Fibonnaci sequence
 
 Recursion is when a function calls it self.
 
@@ -201,6 +201,50 @@ const recursiveFibonacci = (n) => {
 
     return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
 }
+```
+## 6. Recursive Factorial of a number
+
+Problem defination:
+
+```bash
+Give an integer 'n', fina the factorial of the integer. denoted !n which are non-nevetive integers.
+
+Factorial of zero is 1.
+
+n! = n * (n-1)!
+
+Example, 
+[x] factorial(4) = 4*3*2*1 = 24
+[x] factorial(5) = 5*4*3*2*1 = 120
+
+[x] Big O = O(n)
+[x] recursive Linear time complexity 
+```
+
+Solution:
+
+```bash
+const recursiveFactorialNumber = (n) => {
+
+    if (n === 0) {
+        return 1;
+    }
+
+    return n * recursiveFactorialNumber(n - 1);
+}
+```
+## 7. example
+
+Problem defination:
+
+```bash
+
+```
+
+Solution:
+
+```bash
+
 ```
 ## 5. example
 
