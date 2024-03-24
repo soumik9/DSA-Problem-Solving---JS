@@ -157,6 +157,7 @@ const isPowerOfTwo = (n) => {
     return true;
 }
 ```
+
 ## 5. Recursive Fibonnaci sequence
 
 Recursion is when a function calls it self.
@@ -202,6 +203,7 @@ const recursiveFibonacci = (n) => {
     return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
 }
 ```
+
 ## 6. Recursive Factorial of a number
 
 Problem defination:
@@ -233,7 +235,51 @@ const recursiveFactorialNumber = (n) => {
     return n * recursiveFactorialNumber(n - 1);
 }
 ```
-## 7. example
+
+## 7. Linear Search
+
+Problem defination:
+
+```bash
+Give an array of 'n' elements and a target element 't', find the index of 't' in the array.
+Return -1 if the target element is not found.
+
+arr = [-5, 2, 10, 4, 6]
+
+* if t = 10, output should be 2
+* if t = 20, output should be -1
+
+[x] Big O = O(n)
+[x] Linear time complexity 
+```
+
+Solution:
+
+```bash
+const linearSearch = (arr, target) => {
+
+    let indexOfTarget = -1;
+
+    // *solution --------  1
+    // arr.map((item, index) => {
+    //     if (item === target) {
+    //         indexOfTarget = index;
+    //     }
+    // })
+
+    // *solution --------  2
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            return i;
+        }
+    }
+
+    return indexOfTarget;
+
+}
+```
+
+## 8. Binary Searh
 
 Problem defination:
 
@@ -246,6 +292,7 @@ Solution:
 ```bash
 
 ```
+
 ## 5. example
 
 Problem defination:
