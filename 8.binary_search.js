@@ -28,5 +28,5 @@ console.log(binarySearch(a, 5), `search of 5`);
 console.log(binarySearch(a, 6), `search of 6`);
 
 /* 
- * O(n) - Linear
+ * O(logn) time complexity
 */

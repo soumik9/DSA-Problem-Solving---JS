@@ -284,6 +284,48 @@ const linearSearch = (arr, target) => {
 Problem defination:
 
 ```bash
+Give an sorted array of 'n' elements and a target element 't', find the index of 't' in the array.
+Return -1 if the target element is not found.
+
+arr = [-5, 2, 10, 4, 6]
+
+* if t = 10, output should be 2
+* if t = 20, output should be -1
+
+[x] Big O = O(logn)
+```
+
+Solution:
+
+```bash
+const binarySearch = (arr, target) => {
+
+    let leftIndex = 0;
+    let rightIndex = arr.length - 1;
+
+    while (leftIndex <= rightIndex) {
+        let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+
+        if (target === arr[middleIndex]) {
+            return middleIndex;
+        }
+
+        if (target < arr[middleIndex]) {
+            rightIndex = middleIndex - 1;
+        } else {
+            leftIndex = middleIndex + 1;
+        }
+    }
+
+    return -1;
+}
+```
+
+## 9. Recursive Binary Search
+
+Problem defination:
+
+```bash
 
 ```
 
