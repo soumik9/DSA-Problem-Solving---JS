@@ -326,13 +326,42 @@ const binarySearch = (arr, target) => {
 Problem defination:
 
 ```bash
+Give an sorted array of 'n' elements and a target element 't', find the index of 't' in the array.
+Return -1 if the target element is not found.
 
+arr = [-5, 2, 10, 4, 6]
+
+* if t = 10, output should be 2
+* if t = 20, output should be -1
+
+[x] Big O = O(logn)
 ```
 
 Solution:
 
 ```bash
+const recursiveBinarySearch = (arr, target) => {
+    return search(arr, target, 0, arr.length - 1);
+}
 
+const search = (arr, target, leftIndex, rightIndex) => {
+
+    if (leftIndex > rightIndex) {
+        return -1;
+    }
+
+    let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+
+    if (target === arr[middleIndex]) {
+        return middleIndex;
+    }
+
+    if (target < arr[middleIndex]) {
+        return search(arr, target, 0, middleIndex - 1);
+    } else {
+        return search(arr, target, middleIndex + 1, rightIndex);
+    }
+}
 ```
 
 ## 5. example
