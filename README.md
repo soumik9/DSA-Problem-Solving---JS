@@ -409,6 +409,44 @@ console.log(a);
 Problem defination:
 
 ```bash
+arr = [-6, 20, 8, -2, 4]
+
+sort the array either in ascending or descending way.
+
+array should be return as, arr = [-6, -2, 4, 8, 20]
+ 
+[x] Big O = O(n^2)
+[x] quadratic time complexity
+```
+
+Solution:
+
+```bash
+const insertionSort = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+
+        let numberToInsert = arr[i];
+        let j = i - 1;
+
+        while (j >= 0 && arr[j] > numberToInsert) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+
+        arr[j + 1] = numberToInsert;
+    }
+}
+
+const a = [-6, 20, 8, -2, 4];
+insertionSort(a);
+console.log(a);
+```
+
+## 12. Quick Sort
+
+Problem defination:
+
+```bash
 
 ```
 
@@ -417,6 +455,21 @@ Solution:
 ```bash
 
 ```
+
+## 13. Merge Sort
+
+Problem defination:
+
+```bash
+
+```
+
+Solution:
+
+```bash
+
+```
+
 ## 5. example
 
 Problem defination:
