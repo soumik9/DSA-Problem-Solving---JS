@@ -573,8 +573,64 @@ const cartesianProduct = (arr1, arr2) => {
 
 const a = [1, 2];
 const b = [3, 4, 5];
-console.log(cartesianProduct(a, b));
+console.log(cartesianProduct(a, b)); 
 ```
+
+## 15. Climbing Staricase
+
+Problem defination:
+
+```bash
+Given a staircase of 'n' steps, count the number of distinct ways to climb to to the top.
+Can climb 1 step or 2 steps at a time.
+
+* n = 1, climbingStairCase(1) = 1   | 1
+* n = 2, climbingStairCase(2) = 2   | (1, 1) and (2)
+* n = 3, climbingStairCase(3) = 3   | (1, 1, 1), (1, 2) and (2, 1)
+* n = 4, climbingStairCase(4) = 5   | (1, 1, 1, 1), (1, 1, 2), (1, 2, 1), (2, 1, 1) and (2, 2) 
+
+for n = 4 theres is 5 way to go top of the staircase.
+
+1. at any give time, you can climb either 1 step or 2 steps
+2. if you have to climb to step 'n', can only climb from 'n-1' or 'n-2'
+3. calculate the ways, can climb 'n-1' and 'n-2' and add them
+4. climbingStairCase(n) = climbingStairCase(n - 1) + climbingStairCase(n - 2)
+```
+
+Solution:
+
+```bash
+const climbingStairCase = (n) => {
+
+    const numOfWays = [1, 2];
+
+    for (let i = 2; i <= n; i++) {
+        numOfWays[i] = numOfWays[i - 1] + numOfWays[i - 2]
+    }
+
+    return numOfWays[n - 1];
+}
+
+console.log(climbingStairCase(1));
+console.log(climbingStairCase(2));
+console.log(climbingStairCase(3));
+console.log(climbingStairCase(4));
+```
+
+## 16. Tower of Hanoi
+
+Problem defination:
+
+```bash
+
+```
+
+Solution:
+
+```bash
+
+```
+
 ## 5. example
 
 Problem defination:

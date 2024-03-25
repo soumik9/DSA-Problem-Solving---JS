@@ -1,5 +1,5 @@
 // *climbing staircase function
-const towerOfHanoi = (n) => {
+const climbingStairCase = (n) => {
 
     const numOfWays = [1, 2];
 
@@ -10,10 +10,10 @@ const towerOfHanoi = (n) => {
     return numOfWays[n - 1];
 }
 
-console.log(towerOfHanoi(1));
-console.log(towerOfHanoi(2));
-console.log(towerOfHanoi(3));
-console.log(towerOfHanoi(4));
+console.log(climbingStairCase(1));
+console.log(climbingStairCase(2));
+console.log(climbingStairCase(3));
+console.log(climbingStairCase(4));
 
 /* 
  * Big O = O(n)
