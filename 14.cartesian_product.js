@@ -1,4 +1,3 @@
-// *cartesian product of two sets function
 const cartesianProduct = (arr1, arr2) => {
 
     const result = [];
@@ -17,8 +16,3 @@ const cartesianProduct = (arr1, arr2) => {
 const a = [1, 2];
 const b = [3, 4, 5];
 console.log(cartesianProduct(a, b));
-
-/* 
- * O(n^2) - quadratic time complexity (if both array length same)
- * O(mn) - depends on the array length
-*/
