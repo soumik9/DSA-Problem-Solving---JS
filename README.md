@@ -447,13 +447,43 @@ console.log(a);
 Problem defination:
 
 ```bash
+arr = [-6, 20, 8, -2, 4]
 
+sort the array either in ascending or descending way.
+
+array should be return as, arr = [-6, -2, 4, 8, 20]
+
+identify the pivot element in the array,
+
+1. pick first element as pivot.
+2. pick last element as pivot. (approach we gonna use)
+3. pick a random element as pivot.
+4. pick median as pivot.
+
+put everything that's smaller than pivot into left array and which are greater put into right array.
+Repeat the process for the individual left and right arrays tille array length is 1 which is sorted by condition.
+ 
+[x] Big O = O(n^2) worst case if array is already sorted
+[x] Avarage - O(nlogn)
 ```
 
 Solution:
 
 ```bash
+const quickSort = arr => {
+    if (arr.length < 2) return arr
+    const pivot = arr[arr.length - 1]
+    const left = []
+    const right = []
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < pivot) left.push(arr[i])
+        if (arr[i] > pivot) right.push(arr[i])
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)]
+}
 
+const a = [8, 20, -2, 4, -6];
+console.log(quickSort(a));
 ```
 
 ## 13. Merge Sort
@@ -461,7 +491,63 @@ Solution:
 Problem defination:
 
 ```bash
+arr = [-6, 20, 8, -2, 4]
 
+sort the array either in ascending or descending way.
+
+array should be return as, arr = [-6, -2, 4, 8, 20]
+ 
+[x] O(nlogn) - Best time complexity
+```
+
+Solution:
+
+```bash
+const mergeSort = (arr) => {
+    if (arr.length < 2) return arr;
+
+    const mid = Math.floor(arr.length / 2);
+    const leftArr = arr.slice(0, mid);
+    const rightArr = arr.slice(mid);
+
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
+}
+
+const merge = (leftArr, rightArr) => {
+    const sortedArr = [];
+    while (leftArr.length && rightArr.length) {
+        if (leftArr[0] <= rightArr[0]) {
+            sortedArr.push(leftArr.shift());
+        } else {
+            sortedArr.push(rightArr.shift());
+        }
+    }
+
+    return [...sortedArr, ...leftArr, ...rightArr];
+}
+
+const a = [8, 20, -2, 4, -6];
+console.log(mergeSort(a));
+```
+
+## 14. Cartesian Product
+
+Problem defination:
+
+```bash
+Given two infinite non-empty sets, find their cartesian product.
+
+the cartesian product of two sets A and B, denoted AxB, set the set of all ordered pairs (a, b) where a is in A and b is is B.
+
+if const A = [1, 2]  const B = [3, 4],
+
+AxB = [ [1, 3], [1, 4], [2, 3], [2, 4] ]
+
+if const A = [1, 2]  const B = [3, 4, 5],
+
+AxB = [ [1, 3], [1, 4], [1, 5] [2, 3], [2, 4], [2, 5] ]
+
+* traverse each array and pair each element in the first array with each element is second array.
 ```
 
 Solution:
@@ -469,7 +555,6 @@ Solution:
 ```bash
 
 ```
-
 ## 5. example
 
 Problem defination:
