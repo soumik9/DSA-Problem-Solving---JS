@@ -759,6 +759,132 @@ console.log(stack.peek()); // the last element
 stack.print();
 ```
 
+## 19. Queue array - linear time complexity
+
+Problem defination:
+
+```bash
+1. sequential collection of elements.
+2. follows FIFO - first in first out
+3. first element inserted to remove first element.
+4. abstract data type.
+5. enqueue to add element to tail.
+6. dequeue to remove element from front.
+```
+
+Solution:
+
+```bash
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    enqueue(el) {
+        this.items.push(el);
+    }
+
+    dequeue() {
+        return this.items.shift();
+
+        // * by using shift linear time complexity which is not favorable
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    peek() {
+        if (!this.isEmpty()) {
+            return this.items[0];
+        }
+        return null;
+    }
+
+    size() {
+        return this.items.length;
+    }
+
+    print() {
+        console.log(this.items.toString());
+    }
+}
+
+const queue = new Queue();
+console.log(queue.isEmpty());
+queue.enqueue(20);
+queue.enqueue(10);
+queue.enqueue(30);
+console.log(queue.size());
+queue.print();
+console.log(queue.dequeue());
+console.log(queue.peek()); // the first element
+queue.print();
+```
+
+## 20. Queue object - constant time complexity
+
+Problem defination:
+
+```bash
+1. sequential collection of elements.
+2. follows FIFO - first in first out
+3. first element inserted to remove first element.
+4. abstract data type.
+5. enqueue to add element to tail.
+6. dequeue to remove element from front.
+```
+
+Solution:
+
+```bash
+class Queue {
+    constructor() {
+        this.items = {};
+        this.rear = 0;
+        this.front = 0;
+    }
+
+    enqueue(el) {
+        this.items[this.rear] = el;
+        this.rear++;
+    }
+
+    dequeue() {
+        const item = this.items[this.front];
+        delete this.items[this.front];
+        this.front++;
+        return item
+    }
+
+    isEmpty() {
+        return this.rear - this.front === 0;
+    }
+
+    peek() {
+        return this.items[this.front];
+    }
+
+    size() {
+        return this.rear - this.front;
+    }
+
+    print() {
+        console.log(this.items);
+    }
+}
+
+const queue = new Queue();
+console.log(queue.isEmpty());
+queue.enqueue(20);
+queue.enqueue(10);
+queue.enqueue(30);
+console.log(queue.size());
+queue.print();
+console.log(queue.dequeue());
+console.log(queue.peek()); // the first element
+queue.print();
+```
 ## 5. example
 
 Problem defination:
